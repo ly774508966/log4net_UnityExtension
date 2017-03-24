@@ -47,6 +47,15 @@ Use inside your code like this
         public ILogger OperationLog { get; set; }
 ```
 
+or resolve it manually
+
+
+```sh
+            var loggerFactory = UnityConfig.UnityContainer.Resolve<ILoggerFactory>();
+            ILogger _logger = loggerFactory.CreateLogger(new LoggerConfigurationOptions { Name = "UserLog", Category = Category.UserAction });
+```
+
+
 
 Example for Web.config
 
